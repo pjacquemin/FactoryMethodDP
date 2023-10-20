@@ -5,7 +5,7 @@ namespace FactoryMethod.QuoteMaker
     {
         public Quote CreateQuote()
         {
-            Quote quote = MakeQuote();
+            var quote = MakeQuote();
 
             quote.CustomerInfo = MakeCustomerInfo();
             quote.ProductLines = MakeProductLines();
