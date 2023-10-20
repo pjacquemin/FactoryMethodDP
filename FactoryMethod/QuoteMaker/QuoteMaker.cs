@@ -3,13 +3,13 @@ namespace FactoryMethod.QuoteMaker
 {
     public class QuoteMaker
     {
-        public Quote CreateQuote()
+        public Quote CreateQuote(QuoteMaker quoteMaker)
         {
-            var quote = MakeQuote();
+            var quote = quoteMaker.MakeQuote();
 
-            quote.CustomerInfo = MakeCustomerInfo();
-            quote.ProductLines = MakeProductLines();
-            quote.Total = MakeTotal();
+            quote.CustomerInfo = quoteMaker.MakeCustomerInfo();
+            quote.ProductLines = quoteMaker.MakeProductLines();
+            quote.Total = quoteMaker.MakeTotal();
 
             return quote;
         }
